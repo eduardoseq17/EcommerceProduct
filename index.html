@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght,YOPQ@100..900,300&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | E-commerce product page</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="global.css" />
+    <link rel="stylesheet" href="desktop.css" />
+  </head>
+  <body>
+    <div class="overlay"></div>
+    <!-- ######################### header ########################### -->
+    <nav class="nav-bar">
+      <button class="btn-menu" aria-expanded="false" aria-controls="main-menu">
+        <img class="icon-open" src="./images/icon-menu.svg" alt="menu button" />
+        <img
+          class="icon-close"
+          src="./images/icon-close.svg"
+          alt="close menu button"
+        />
+      </button>
+
+      <img class="logo" src="./images/logo.svg" alt="logo of sneakers" />
+
+      <ul id="main-menu" class="menu-list">
+        <li class="menu-list-item"><a href="#">Collections</a></li>
+        <li class="menu-list-item"><a href="#">Men</a></li>
+        <li class="menu-list-item"><a href="#">Women</a></li>
+        <li class="menu-list-item"><a href="#">About</a></li>
+        <li class="menu-list-item"><a href="#">Contact</a></li>
+      </ul>
+
+      <div class="cart-wrapper">
+        <button class="cart-btn" aria-label="Open cart">
+          <img src="./images/icon-cart.svg" alt="" />
+          <span class="cart-counter">1</span>
+        </button>
+
+        <!-- Desplegable del carrito -->
+        <div class="cart-dropdown">
+          <h3 class="cart-title">Cart</h3>
+
+          <div class="cart-content">
+            <ul class="cart-list">
+              <li class="cart-default">Your Cart is Empty</li>
+              <li class="cart-item">
+                <img
+                  src="./images/image-product-1-thumbnail.jpg"
+                  alt="Product thumbnail"
+                />
+
+                <div class="cart-item-info">
+                  <h4 class="cart-item-title">Fall Limited Edition Sneakers</h4>
+                  <div class="cart-item-pricing">
+                    <span class="cart-price">$125.00</span> x
+                    <span class="cart-quantity">3</span>
+                    <span class="cart-total">$375.00</span>
+                  </div>
+                </div>
+
+                <button class="cart-delete-btn" aria-label="Delete item">
+                  <img src="./images/icon-delete.svg" alt="" />
+                </button>
+              </li>
+            </ul>
+
+            <button class="checkout-btn">Checkout</button>
+          </div>
+        </div>
+      </div>
+      <img
+        class="avatar-img"
+        src="./images/image-avatar.png"
+        alt="avatar image"
+      />
+    </nav>
+
+    <!-- ################################ main container ########################## -->
+
+    <main class="main-container">
+      <!-- ########################## image container ############################# -->
+      <div class="image-container">
+        <div class="main-image">
+          <button id="img-previous" class="btn-previous">
+            <img src="./images/icon-previous.svg" alt="previous image button" />
+          </button>
+          <button id="img-next" class="btn-next">
+            <img src="./images/icon-next.svg" alt="next image button" />
+          </button>
+
+          <img
+            id="mainImg"
+            src="./images/image-product-1.jpg"
+            alt="main image of the product"
+          />
+        </div>
+
+        <ul class="image-thumbnail">
+          <li data-item="1" class="thumbnail-item">
+            <img
+              src="./images/image-product-1-thumbnail.jpg"
+              alt="first thumbnail image of the product"
+            />
+          </li>
+          <li data-item="2" class="thumbnail-item">
+            <img
+              src="./images/image-product-2-thumbnail.jpg"
+              alt="second thumbnail image of the product"
+            />
+          </li>
+          <li data-item="3" class="thumbnail-item">
+            <img
+              src="./images/image-product-3-thumbnail.jpg"
+              alt="third thumbnail image of the product"
+            />
+          </li>
+          <li data-item="4" class="thumbnail-item">
+            <img
+              src="./images/image-product-4-thumbnail.jpg"
+              alt="fourth thumbnail image of the product"
+            />
+          </li>
+        </ul>
+      </div>
+
+      <div class="lightbox">
+        <button class="btn-img"></button>
+        <button id="lightbox-previous" class="btn-previous">
+          <img src="./images/icon-previous.svg" alt="previous image button" />
+        </button>
+        <button id="lightbox-next" class="btn-next">
+          <img src="./images/icon-next.svg" alt="next image button" />
+        </button>
+        <div class="main-image">
+          <img
+            id="lightboxImg"
+            src="./images/image-product-1.jpg"
+            alt="main image of the product"
+          />
+        </div>
+
+        <ul class="image-thumbnail">
+          <li data-item="1" class="thumbnail-item">
+            <img
+              src="./images/image-product-1-thumbnail.jpg"
+              alt="first thumbnail image of the product"
+            />
+          </li>
+          <li data-item="2" class="thumbnail-item">
+            <img
+              src="./images/image-product-2-thumbnail.jpg"
+              alt="second thumbnail image of the product"
+            />
+          </li>
+          <li data-item="3" class="thumbnail-item">
+            <img
+              src="./images/image-product-3-thumbnail.jpg"
+              alt="third thumbnail image of the product"
+            />
+          </li>
+          <li data-item="4" class="thumbnail-item">
+            <img
+              src="./images/image-product-4-thumbnail.jpg"
+              alt="fourth thumbnail image of the product"
+            />
+          </li>
+        </ul>
+      </div>
+
+      <!-- ########################### product info container ######################### -->
+
+      <div class="product-container">
+        <span class="product-subtitle">SNEAKER COMPANY</span>
+        <h1 class="product-title">Fall Limited Edition Sneakers</h1>
+        <p class="product-description">
+          These low-profile sneakers are your perfect casual wear companion.
+          Featuring a durable rubber outer sole, they’ll withstand everything
+          the weather can offer.
+        </p>
+
+        <div class="product-price-container">
+          <div class="product-price">
+            <span class="product-actual-price">$125.00</span>
+            <span class="product-discount">50%</span>
+          </div>
+          <span class="product-previous-price">$250.00</span>
+        </div>
+
+        <div class="buy-ui">
+          <div class="product-quantity">
+            <button id="minus" class="btn-product">
+              <img src="./images/icon-minus.svg" alt="minus product button" />
+            </button>
+            <span class="quantity">0</span>
+            <button id="plus" class="btn-product">
+              <img src="./images/icon-plus.svg" alt="more product button" />
+            </button>
+          </div>
+
+          <button class="btn-buy">
+            <img src="./images/icon-cart.svg" alt="" /> Add to Cart
+          </button>
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

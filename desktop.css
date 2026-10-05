@@ -1,0 +1,385 @@
+@media (min-width: 1000px) {
+  body {
+    width: 100%;
+    height: 100vh;
+  }
+
+  /* #################### nav bar #######################*/
+
+  .nav-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    width: 100%;
+    gap: 1.5rem;
+
+    padding: 1rem 1.5rem;
+  }
+
+  .menu-list {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    width: 40%;
+    padding: 0;
+    height: auto;
+  }
+
+  .menu-list-item {
+    width: auto;
+    list-style: none;
+    color: var(--grayish-blue);
+  }
+
+  .menu-list-item a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .logo {
+    object-fit: cover;
+    flex-shrink: 1;
+    height: 20px;
+    margin: 0;
+  }
+
+  .btn-menu {
+    display: none;
+  }
+
+  .cart-btn {
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+
+    margin-left: auto;
+    background: none;
+    border: none;
+  }
+
+  .cart-btn img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .avatar-img {
+    width: 45px;
+    height: auto;
+  }
+
+  /* ################ main container #################*/
+
+  .main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    height: 100%;
+    flex-direction: row;
+  }
+
+  /* ################ image container  ###################*/
+
+  .overlay.active {
+    position: fixed;
+    z-index: 99;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+
+  .image-container,
+  .lightbox {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 550px;
+    width: 100%;
+    padding: 2rem;
+  }
+
+  .main-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1/1;
+  }
+
+  .main-image img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.8rem;
+  }
+
+  .image-thumbnail {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(4, 1fr);
+    list-style: none;
+  }
+
+  .thumbnail-item {
+    border-radius: 0.8rem;
+    width: 90px;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    place-self: center;
+  }
+
+  .thumbnail-item img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  .thumbnail-item.active {
+    border-radius: 0.8rem;
+    border: 4px solid var(--orange);
+    opacity: 0.5;
+  }
+  .btn-previous {
+    opacity: 0;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+    background-color: var(--white);
+    border: none;
+    transition:
+      opacity 0.2s ease,
+      background-color 0.2s ease;
+  }
+
+  .main-image:hover .btn-previous {
+    opacity: 1;
+  }
+  .btn-next {
+    opacity: 0;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+    background-color: var(--white);
+    border: none;
+    transition:
+      opacity 0.2s ease,
+      background-color 0.2s ease;
+  }
+  .main-image:hover .btn-next {
+    opacity: 1;
+  }
+
+  .btn-previous img,
+  .btn-next img {
+    width: 15px;
+    height: 15px;
+  }
+
+  /* ######################### image container lightbox ######################### */
+
+  .lightbox {
+    display: none;
+  }
+
+  .lightbox.active .btn-img {
+    position: absolute;
+    z-index: 101;
+    top: -25px;
+    right: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    background: none;
+    border: none;
+
+    background-color: var(--orange);
+
+    mask: url("./images/icon-close.svg") center / contain no-repeat;
+    -webkit-mask: url("./images/icon-close.svg") center / contain no-repeat;
+    transition: filter 0.2s ease;
+  }
+
+  .lightbox.active .btn-img:hover {
+    filter: brightness(50%);
+  }
+
+  .lightbox.active {
+    display: grid;
+    position: absolute;
+    z-index: 100;
+
+    transform: scale(1.1);
+  }
+
+  .lightbox.active .btn-next {
+    opacity: 1;
+    z-index: 101;
+    top: 45%;
+    right: 5px;
+  }
+
+  .lightbox.active .btn-previous {
+    opacity: 1;
+    z-index: 101;
+    top: 45%;
+    left: 5px;
+  }
+
+  /* ################ product info container  #############*/
+
+  .product-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 50%;
+    max-height: 500px;
+    height: 100%;
+
+    padding: 3rem;
+    gap: 1rem;
+  }
+
+  .product-subtitle {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--dark-grayish-blue);
+  }
+
+  .product-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--very-dark-blue);
+  }
+
+  .product-description {
+    font-size: 1.3rem;
+    color: var(--grayish-blue);
+  }
+
+  .product-price-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    gap: 1rem;
+    font-weight: 700;
+  }
+
+  .product-price {
+    display: flex;
+    align-items: end;
+    gap: 1rem;
+  }
+
+  .product-actual-price {
+    font-size: 2rem;
+    color: var(--very-dark-blue);
+  }
+
+  .product-discount {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.8rem;
+    border-radius: 0.5rem;
+    color: var(--white);
+    background-color: var(--very-dark-blue);
+  }
+
+  .product-previous-price {
+    font-size: 1rem;
+    text-decoration: line-through;
+    color: var(--dark-grayish-blue);
+  }
+
+  .buy-ui {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 1rem;
+  }
+
+  .product-quantity {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    height: 50px;
+    padding: 0.5rem 1rem;
+    background-color: var(--light-grayish-blue);
+    border-radius: 0.8rem;
+  }
+
+  .btn-product {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 20px;
+    height: 20px;
+    background: none;
+    border: none;
+  }
+
+  .btn-buy {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 50px;
+    padding: 0.5rem 1rem;
+
+    gap: 1rem;
+
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+
+    background-color: var(--orange);
+    border-radius: 0.8rem;
+    border: none;
+  }
+
+  .btn-buy img {
+    flex-shrink: 1;
+    width: auto;
+    height: 20px;
+  }
+}
